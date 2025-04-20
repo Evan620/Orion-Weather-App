@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Services\WeatherService;
-use App\Http\Resources\WeatherResource;
-use App\Http\Resources\ForecastResource;
+// Not using resources for this demo
 use Illuminate\Http\JsonResponse;
 
 class WeatherController extends Controller
