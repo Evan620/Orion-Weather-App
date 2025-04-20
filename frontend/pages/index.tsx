@@ -35,6 +35,7 @@ export default function Home() {
   const handleUnitToggle = (newUnit: TemperatureUnit) => {
     setUnit(newUnit);
     if (city) {
+      // Now fetchWeatherData accepts both city and unit parameters
       fetchWeatherData(city, newUnit);
     }
   };
