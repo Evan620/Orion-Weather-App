@@ -1,8 +1,8 @@
 import { useState, useCallback } from 'react';
 import { CurrentWeather, ForecastDay, TemperatureUnit } from '../types/weather';
 
-// Use this for development when backend is not yet available
-const useMockData = true;
+// Use real API data
+const useMockData = false;
 
 // Sample mock data for frontend testing
 const generateMockWeatherData = (cityName: string): CurrentWeather => {
