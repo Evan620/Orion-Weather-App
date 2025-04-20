@@ -105,3 +105,52 @@ class WeatherController extends Controller
         }
     }
 }
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use App\Services\WeatherService;
+use Illuminate\Http\Request;
+
+class WeatherController extends Controller
+{
+    private $weatherService;
+
+    public function __construct(WeatherService $weatherService)
+    {
+        $this->weatherService = $weatherService;
+    }
+
+    public function getCurrentWeather(Request $request)
+    {
+        $city = $request->query('city');
+        
+        if (!$city) {
+            return response()->json(['error' => 'City parameter is required'], 400);
+        }
+
+        try {
+            $data = $this->weatherService->getCurrentWeather($city);
+            return response()->json(['data' => $data]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Failed to fetch weather data'], 500);
+        }
+    }
+
+    public function getForecast(Request $request)
+    {
+        $city = $request->query('city');
+        
+        if (!$city) {
+            return response()->json(['error' => 'City parameter is required'], 400);
+        }
+
+        try {
+            $data = $this->weatherService->getForecast($city);
+            return response()->json(['data' => $data]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Failed to fetch forecast data'], 500);
+        }
+    }
+}

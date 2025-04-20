@@ -201,3 +201,41 @@ class WeatherService
         return $dailyForecasts;
     }
 }
+<?php
+
+namespace App\Services;
+
+use Illuminate\Support\Facades\Http;
+
+class WeatherService
+{
+    private $apiKey;
+    private $baseUrl = 'https://api.openweathermap.org/data/2.5';
+
+    public function __construct()
+    {
+        $this->apiKey = env('OPENWEATHER_API_KEY');
+    }
+
+    public function getCurrentWeather(string $city)
+    {
+        $response = Http::get("{$this->baseUrl}/weather", [
+            'q' => $city,
+            'appid' => $this->apiKey,
+            'units' => 'metric'
+        ]);
+
+        return $response->json();
+    }
+
+    public function getForecast(string $city)
+    {
+        $response = Http::get("{$this->baseUrl}/forecast", [
+            'q' => $city,
+            'appid' => $this->apiKey,
+            'units' => 'metric'
+        ]);
+
+        return $response->json();
+    }
+}

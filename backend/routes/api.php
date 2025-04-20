@@ -23,3 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/weather', [WeatherController::class, 'getCurrentWeather']);
 Route::get('/forecast', [WeatherController::class, 'getForecast']);
 Route::get('/geocode', [WeatherController::class, 'geocodeCity']);
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\WeatherController;
+
+Route::get('/weather', [WeatherController::class, 'getCurrentWeather']);
+Route::get('/forecast', [WeatherController::class, 'getForecast']);
