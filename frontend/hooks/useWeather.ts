@@ -13,7 +13,7 @@ export const useWeather = (defaultUnit: TemperatureUnit) => {
       setError(null);
 
       // Connect to our Laravel backend
-      const API_BASE_URL = 'http://localhost:8000/api';
+      const API_BASE_URL = 'http://0.0.0.0:8000/api';
       
       const weatherResponse = await fetch(`${API_BASE_URL}/weather?city=${encodeURIComponent(city)}&units=${tempUnit}`);
       const forecastResponse = await fetch(`${API_BASE_URL}/forecast?city=${encodeURIComponent(city)}&units=${tempUnit}`);
