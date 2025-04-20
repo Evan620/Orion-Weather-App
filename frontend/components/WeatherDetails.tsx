@@ -1,3 +1,4 @@
+
 interface WeatherDetailsProps {
   windSpeed: number;
   humidity: number;
@@ -6,20 +7,20 @@ interface WeatherDetailsProps {
 export default function WeatherDetails({ windSpeed, humidity }: WeatherDetailsProps) {
   return (
     <div className="grid grid-cols-2 gap-4">
-      <div className="card bg-base-100 shadow-md p-4">
-        <h3 className="text-sm text-gray-500 mb-2">Wind Status</h3>
-        <div className="flex items-center justify-center">
+      <div className="bg-white rounded-lg p-6">
+        <h3 className="text-sm text-gray-600 mb-4">Wind Status</h3>
+        <div className="flex items-center">
           <p className="text-2xl font-bold">{Math.round(windSpeed)} km/h</p>
         </div>
       </div>
 
-      <div className="card bg-base-100 shadow-md p-4">
-        <h3 className="text-sm text-gray-500 mb-2">Humidity</h3>
-        <div className="flex flex-col items-center">
+      <div className="bg-white rounded-lg p-6">
+        <h3 className="text-sm text-gray-600 mb-4">Humidity</h3>
+        <div>
           <p className="text-2xl font-bold mb-2">{humidity}%</p>
           <div className="w-full bg-gray-200 rounded-full h-2">
             <div 
-              className="bg-primary h-2 rounded-full" 
+              className="bg-blue-500 h-2 rounded-full" 
               style={{ width: `${humidity}%` }}
             ></div>
           </div>
