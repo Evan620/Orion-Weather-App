@@ -1,0 +1,70 @@
+useWeather.ts:15 
+            
+            
+           GET https://7f216957-18d2-4465-8efd-bf8dbda847ca-00-3udbj47lddjf0.janeway.replit.dev/api/weather?city=nairobi 404 (Not Found)
+window.fetch @ Network.js:219
+eval @ useWeather.ts:15
+handleSearch @ index.tsx:32
+handleSubmit @ SearchBar.tsx:13
+callCallback @ react-dom.development.js:4164
+invokeGuardedCallbackDev @ react-dom.development.js:4213
+invokeGuardedCallback @ react-dom.development.js:4277
+invokeGuardedCallbackAndCatchFirstError @ react-dom.development.js:4291
+executeDispatch @ react-dom.development.js:9041
+processDispatchQueueItemsInOrder @ react-dom.development.js:9073
+processDispatchQueue @ react-dom.development.js:9086
+dispatchEventsForPlugins @ react-dom.development.js:9097
+eval @ react-dom.development.js:9288
+batchedUpdates$1 @ react-dom.development.js:26135
+batchedUpdates @ react-dom.development.js:3991
+dispatchEventForPluginEventSystem @ react-dom.development.js:9287
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ react-dom.development.js:6465
+dispatchEvent @ react-dom.development.js:6457
+dispatchDiscreteEvent @ react-dom.development.js:6430Understand this error
+useWeather.ts:15 
+            
+            
+           GET https://7f216957-18d2-4465-8efd-bf8dbda847ca-00-3udbj47lddjf0.janeway.replit.dev/api/weather?city=nairobi 404 (Not Found)
+window.fetch @ Network.js:219
+eval @ useWeather.ts:15
+eval @ index.tsx:26
+commitHookEffectListMount @ react-dom.development.js:23145
+commitPassiveMountOnFiber @ react-dom.development.js:24921
+commitPassiveMountEffects_complete @ react-dom.development.js:24886
+commitPassiveMountEffects_begin @ react-dom.development.js:24873
+commitPassiveMountEffects @ react-dom.development.js:24861
+flushPassiveEffectsImpl @ react-dom.development.js:27034
+flushPassiveEffects @ react-dom.development.js:26979
+commitRootImpl @ react-dom.development.js:26930
+commitRoot @ react-dom.development.js:26677
+performSyncWorkOnRoot @ react-dom.development.js:26112
+flushSyncCallbacks @ react-dom.development.js:12042
+eval @ react-dom.development.js:25646Understand this error
+useWeather.ts:16 
+            
+            
+           GET https://7f216957-18d2-4465-8efd-bf8dbda847ca-00-3udbj47lddjf0.janeway.replit.dev/api/forecast?city=nairobi 404 (Not Found)
+window.fetch @ Network.js:219
+eval @ useWeather.ts:16
+await in eval
+handleSearch @ index.tsx:32
+handleSubmit @ SearchBar.tsx:13
+callCallback @ react-dom.development.js:4164
+invokeGuardedCallbackDev @ react-dom.development.js:4213
+invokeGuardedCallback @ react-dom.development.js:4277
+invokeGuardedCallbackAndCatchFirstError @ react-dom.development.js:4291
+executeDispatch @ react-dom.development.js:9041
+processDispatchQueueItemsInOrder @ react-dom.development.js:9073
+processDispatchQueue @ react-dom.development.js:9086
+dispatchEventsForPlugins @ react-dom.development.js:9097
+eval @ react-dom.development.js:9288
+batchedUpdates$1 @ react-dom.development.js:26135
+batchedUpdates @ react-dom.development.js:3991
+dispatchEventForPluginEventSystem @ react-dom.development.js:9287
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ react-dom.development.js:6465
+dispatchEvent @ react-dom.development.js:6457
+dispatchDiscreteEvent @ react-dom.development.js:6430Understand this error
+useWeather.ts:16 
+            
+            
+           GET https://7f216957-18d2-4465-8efd-bf8dbda847ca-00-3udbj47lddjf0.janeway.replit.dev/api/forecast?city=nairobi 404 (Not Found)
