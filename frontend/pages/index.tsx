@@ -58,7 +58,7 @@ export default function Home() {
             <div className="col-span-8">
               <div className="mb-6">
                 <div className="grid grid-cols-3 gap-4">
-                  {forecast && forecast.slice(0, 3).map((day, index) => (
+                  {forecast?.list && forecast.list.slice(0, 3).map((day, index) => (
                     <ForecastCard key={index} forecast={day} unit={unit} />
                   ))}
                 </div>
