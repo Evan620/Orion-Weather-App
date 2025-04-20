@@ -27,16 +27,16 @@ task = "packager.installForAll"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd frontend && npm install && npm run dev"
+args = "cd frontend && npm run dev"
 waitForPort = 5000
 
 [deployment]
-run = ["sh", "-c", "cd frontend && npm install && npm run dev"]
+run = ["sh", "-c", "cd frontend && npm run dev"]
 
 [[ports]]
 localPort = 5000
 externalPort = 80
 
 [[ports]]
-localPort = 42231
+localPort = 41017
 externalPort = 3000
