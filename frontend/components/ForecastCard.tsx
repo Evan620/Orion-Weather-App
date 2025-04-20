@@ -13,18 +13,23 @@ export default function ForecastCard({ forecast, unit }: ForecastCardProps) {
   const date = new Date(forecast.dt * 1000);
 
   return (
-    <div className="bg-white rounded-lg p-4 text-center">
-      <p className="text-sm text-gray-600 mb-2">
-        {date.toLocaleDateString('en-US', { day: 'numeric', month: 'short' })}
+    <div className="bg-white rounded-lg p-6 shadow-lg">
+      <p className="text-lg font-semibold text-gray-700">
+        {date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
       </p>
-      <img 
-        src={iconUrl} 
-        alt={mainWeather.description} 
-        className="w-16 h-16 mx-auto"
-      />
-      <p className="text-sm mt-2">
-        {formatTemperature(forecast.main.temp, unit)}
-      </p>
+      <div className="flex flex-col items-center my-4">
+        <img 
+          src={iconUrl} 
+          alt={mainWeather.description}
+          className="w-16 h-16"
+        />
+        <p className="text-xl font-bold mt-2">
+          {formatTemperature(forecast.main.temp, unit)}
+        </p>
+        <p className="text-sm text-gray-600 capitalize mt-1">
+          {mainWeather.description}
+        </p>
+      </div>
     </div>
   );
 }
