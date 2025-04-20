@@ -6,7 +6,22 @@ import ForecastCard from '../components/ForecastCard';
 import WeatherDetails from '../components/WeatherDetails';
 import TemperatureToggle from '../components/TemperatureToggle';
 import { useWeather } from '../hooks/useWeather';
-import { TemperatureUnit } from '../types/weather';
+import { TemperatureUnit, Forecast } from '../types/weather';
+
+function getDailyForecasts(forecastList: Forecast[]): Forecast[] {
+  const dailyForecasts: Forecast[] = [];
+  const seen = new Set<string>();
+
+  for (const forecast of forecastList) {
+    const date = new Date(forecast.dt * 1000).toLocaleDateString();
+    if (!seen.has(date) && dailyForecasts.length < 3) {
+      seen.add(date);
+      dailyForecasts.push(forecast);
+    }
+  }
+
+  return dailyForecasts;
+}
 
 export default function Home() {
   const [city, setCity] = useState<string>('London');
@@ -58,7 +73,7 @@ export default function Home() {
             <div className="col-span-8">
               <div className="mb-6">
                 <div className="grid grid-cols-3 gap-4">
-                  {forecast?.list && forecast.list.slice(0, 3).map((day, index) => (
+                  {forecast?.list && getDailyForecasts(forecast.list).slice(0, 3).map((day, index) => (
                     <ForecastCard key={index} forecast={day} unit={unit} />
                   ))}
                 </div>

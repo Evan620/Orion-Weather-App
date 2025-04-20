@@ -13,7 +13,7 @@ export default function ForecastCard({ forecast, unit }: ForecastCardProps) {
   const date = new Date(forecast.dt * 1000);
 
   return (
-    <div className="bg-white rounded-lg p-6 shadow-lg">
+    <div className="bg-white rounded-lg p-6 shadow-lg border border-gray-700">
       <p className="text-lg font-semibold text-gray-700">
         {date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
       </p>

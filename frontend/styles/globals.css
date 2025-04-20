@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.bg-white {
+  background-color: #1e1e1e !important;
+}
+
+.text-gray-600 {
+  color: #a0aec0 !important;
+}
+
+.text-gray-700 {
+  color: #e2e8f0 !important;
+}
+
 html,
 body {
   padding: 0;
