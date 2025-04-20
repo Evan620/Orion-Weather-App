@@ -2,7 +2,8 @@
 
 A modern weather application that provides real-time weather information and forecasts for locations worldwide using the OpenWeatherMap API.
 
-![Orion Weather App](.github/screenshots/app-preview.png)
+![image](https://github.com/user-attachments/assets/980276fc-c82e-426e-a072-51beb310a6a9)
+
 
 ## Description
 
