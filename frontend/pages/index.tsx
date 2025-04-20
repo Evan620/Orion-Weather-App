@@ -43,11 +43,13 @@ export default function Home() {
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-primary mb-4 md:mb-0">Weather App</h1>
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-            <SearchBar onSearch={handleSearch} />
-            <TemperatureToggle unit={unit} onToggle={handleUnitToggle} />
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-3xl font-bold text-primary">Weather App</h1>
+          <div className="flex items-center gap-4">
+            <div className="flex">
+              <SearchBar onSearch={handleSearch} />
+              <TemperatureToggle unit={unit} onToggle={handleUnitToggle} />
+            </div>
           </div>
         </div>
 
