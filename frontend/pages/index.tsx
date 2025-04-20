@@ -56,13 +56,11 @@ export default function Home() {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto p-4">
-        <div className="flex justify-between items-center mb-6">
-          <div className="flex-1 max-w-xl">
+        <div className="flex items-center gap-2 mb-6">
+          <div className="flex-1">
             <SearchBar onSearch={handleSearch} />
           </div>
-          <div className="ml-4">
-            <TemperatureToggle unit={unit} onToggle={handleUnitToggle} />
-          </div>
+          <TemperatureToggle unit={unit} onToggle={handleUnitToggle} />
         </div>
 
         {currentWeather && (

@@ -15,16 +15,16 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-control">
-      <div className="input-group">
+    <form onSubmit={handleSubmit}>
+      <div className="join">
         <input
           type="text"
           placeholder="Search for a city..."
-          className="input input-bordered"
+          className="input input-bordered join-item"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button type="submit" className="btn btn-square">
+        <button type="submit" className="btn join-item">
           Go
         </button>
       </div>
