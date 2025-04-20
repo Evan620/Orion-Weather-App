@@ -1,0 +1,171 @@
+[HMR] connected
+eruda.js:2 [Fast Refresh] rebuilding
+eruda.js:2 [Fast Refresh] done in 2625ms
+eruda.js:2 [Fast Refresh] rebuilding
+eruda.js:2 
+            
+            
+           GET https://7f216957-18d2-4465-8efd-bf8dbda847ca-00-3udbj47lddjf0.janeway.replit.dev/api/weather?city=London&units=celsius 404 (Not Found)
+window.fetch @ Network.js:219
+eval @ useWeather.ts:18
+eval @ index.tsx:26
+commitHookEffectListMount @ react-dom.development.js:23145
+commitPassiveMountOnFiber @ react-dom.development.js:24921
+commitPassiveMountEffects_complete @ react-dom.development.js:24886
+commitPassiveMountEffects_begin @ react-dom.development.js:24873
+commitPassiveMountEffects @ react-dom.development.js:24861
+flushPassiveEffectsImpl @ react-dom.development.js:27034
+flushPassiveEffects @ react-dom.development.js:26979
+commitRootImpl @ react-dom.development.js:26930
+commitRoot @ react-dom.development.js:26677
+performSyncWorkOnRoot @ react-dom.development.js:26112
+flushSyncCallbacks @ react-dom.development.js:12042
+flushSync @ react-dom.development.js:26196
+scheduleRefresh @ react-dom.development.js:27790
+eval @ react-refresh-runtime.development.js:265
+performReactRefresh @ react-refresh-runtime.development.js:254
+applyUpdate @ helpers.js:123
+statusHandler @ helpers.js:140
+setStatus @ webpack.js?ts=1745136032370:447
+(anonymous) @ webpack.js?ts=1745136032370:618
+Promise.then
+internalApply @ webpack.js?ts=1745136032370:601
+hotApply @ webpack.js?ts=1745136032370:549
+eval @ hot-dev-client.js:312
+Promise.then
+tryApplyUpdates @ hot-dev-client.js:304
+handleSuccess @ hot-dev-client.js:86
+processMessage @ hot-dev-client.js:215
+eval @ hot-dev-client.js:51
+eval @ websocket.js:54
+handleMessage @ websocket.js:53Understand this error
+eruda.js:2 [Fast Refresh] done in 1007ms
+eruda.js:2 
+            
+            
+           GET https://7f216957-18d2-4465-8efd-bf8dbda847ca-00-3udbj47lddjf0.janeway.replit.dev/api/forecast?city=London&units=celsius 404 (Not Found)
+window.fetch @ Network.js:219
+eval @ useWeather.ts:19
+await in eval
+eval @ index.tsx:26
+commitHookEffectListMount @ react-dom.development.js:23145
+commitPassiveMountOnFiber @ react-dom.development.js:24921
+commitPassiveMountEffects_complete @ react-dom.development.js:24886
+commitPassiveMountEffects_begin @ react-dom.development.js:24873
+commitPassiveMountEffects @ react-dom.development.js:24861
+flushPassiveEffectsImpl @ react-dom.development.js:27034
+flushPassiveEffects @ react-dom.development.js:26979
+commitRootImpl @ react-dom.development.js:26930
+commitRoot @ react-dom.development.js:26677
+performSyncWorkOnRoot @ react-dom.development.js:26112
+flushSyncCallbacks @ react-dom.development.js:12042
+flushSync @ react-dom.development.js:26196
+scheduleRefresh @ react-dom.development.js:27790
+eval @ react-refresh-runtime.development.js:265
+performReactRefresh @ react-refresh-runtime.development.js:254
+applyUpdate @ helpers.js:123
+statusHandler @ helpers.js:140
+setStatus @ webpack.js?ts=1745136032370:447
+(anonymous) @ webpack.js?ts=1745136032370:618
+Promise.then
+internalApply @ webpack.js?ts=1745136032370:601
+hotApply @ webpack.js?ts=1745136032370:549
+eval @ hot-dev-client.js:312
+Promise.then
+tryApplyUpdates @ hot-dev-client.js:304
+handleSuccess @ hot-dev-client.js:86
+processMessage @ hot-dev-client.js:215
+eval @ hot-dev-client.js:51
+eval @ websocket.js:54
+handleMessage @ websocket.js:53Understand this error
+Console.js:61 [HMR] connected
+Console.js:61 [Fast Refresh] rebuilding
+useWeather.ts:18 
+            
+            
+           GET https://7f216957-18d2-4465-8efd-bf8dbda847ca-00-3udbj47lddjf0.janeway.replit.dev/api/weather?city=London&units=celsius 404 (Not Found)
+window.fetch @ Network.js:219
+eval @ useWeather.ts:18
+eval @ index.tsx:26
+commitHookEffectListMount @ react-dom.development.js:23145
+commitPassiveMountOnFiber @ react-dom.development.js:24921
+commitPassiveMountEffects_complete @ react-dom.development.js:24886
+commitPassiveMountEffects_begin @ react-dom.development.js:24873
+commitPassiveMountEffects @ react-dom.development.js:24861
+flushPassiveEffectsImpl @ react-dom.development.js:27034
+flushPassiveEffects @ react-dom.development.js:26979
+eval @ react-dom.development.js:26764
+workLoop @ scheduler.development.js:266
+flushWork @ scheduler.development.js:239
+performWorkUntilDeadline @ scheduler.development.js:533Understand this error
+weather:1 
+            
+            
+           Failed to load resource: the server responded with a status of 404 (Not Found)Understand this error
+useWeather.ts:18 
+            
+            
+           GET https://7f216957-18d2-4465-8efd-bf8dbda847ca-00-3udbj47lddjf0.janeway.replit.dev/api/weather?city=London&units=celsius 404 (Not Found)
+window.fetch @ Network.js:219
+eval @ useWeather.ts:18
+eval @ index.tsx:26
+commitHookEffectListMount @ react-dom.development.js:23145
+invokePassiveEffectMountInDEV @ react-dom.development.js:25149
+invokeEffectsInDev @ react-dom.development.js:27346
+commitDoubleInvokeEffectsInDEV @ react-dom.development.js:27325
+flushPassiveEffectsImpl @ react-dom.development.js:27051
+flushPassiveEffects @ react-dom.development.js:26979
+eval @ react-dom.development.js:26764
+workLoop @ scheduler.development.js:266
+flushWork @ scheduler.development.js:239
+performWorkUntilDeadline @ scheduler.development.js:533Understand this error
+weather:1 
+            
+            
+           Failed to load resource: the server responded with a status of 404 (Not Found)Understand this error
+Console.js:61 [Fast Refresh] done in 1109ms
+useWeather.ts:19 
+            
+            
+           GET https://7f216957-18d2-4465-8efd-bf8dbda847ca-00-3udbj47lddjf0.janeway.replit.dev/api/forecast?city=London&units=celsius 404 (Not Found)
+window.fetch @ Network.js:219
+eval @ useWeather.ts:19
+await in eval
+eval @ index.tsx:26
+commitHookEffectListMount @ react-dom.development.js:23145
+commitPassiveMountOnFiber @ react-dom.development.js:24921
+commitPassiveMountEffects_complete @ react-dom.development.js:24886
+commitPassiveMountEffects_begin @ react-dom.development.js:24873
+commitPassiveMountEffects @ react-dom.development.js:24861
+flushPassiveEffectsImpl @ react-dom.development.js:27034
+flushPassiveEffects @ react-dom.development.js:26979
+eval @ react-dom.development.js:26764
+workLoop @ scheduler.development.js:266
+flushWork @ scheduler.development.js:239
+performWorkUntilDeadline @ scheduler.development.js:533Understand this error
+forecast:1 
+            
+            
+           Failed to load resource: the server responded with a status of 404 (Not Found)Understand this error
+useWeather.ts:19 
+            
+            
+           GET https://7f216957-18d2-4465-8efd-bf8dbda847ca-00-3udbj47lddjf0.janeway.replit.dev/api/forecast?city=London&units=celsius 404 (Not Found)
+window.fetch @ Network.js:219
+eval @ useWeather.ts:19
+await in eval
+eval @ index.tsx:26
+commitHookEffectListMount @ react-dom.development.js:23145
+invokePassiveEffectMountInDEV @ react-dom.development.js:25149
+invokeEffectsInDev @ react-dom.development.js:27346
+commitDoubleInvokeEffectsInDEV @ react-dom.development.js:27325
+flushPassiveEffectsImpl @ react-dom.development.js:27051
+flushPassiveEffects @ react-dom.development.js:26979
+eval @ react-dom.development.js:26764
+workLoop @ scheduler.development.js:266
+flushWork @ scheduler.development.js:239
+performWorkUntilDeadline @ scheduler.development.js:533Understand this error
+forecast:1 
+            
+            
+           Failed to load resource: the server responded with a status of 404 (Not Found)Understand this error
