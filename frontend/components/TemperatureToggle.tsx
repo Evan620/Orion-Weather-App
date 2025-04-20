@@ -1,4 +1,3 @@
-import React from 'react';
 import { TemperatureUnit } from '../types/weather';
 
 interface TemperatureToggleProps {
@@ -6,21 +5,23 @@ interface TemperatureToggleProps {
   onToggle: (unit: TemperatureUnit) => void;
 }
 
-const TemperatureToggle: React.FC<TemperatureToggleProps> = ({ unit, onToggle }) => {
+export default function TemperatureToggle({ unit, onToggle }: TemperatureToggleProps) {
   return (
-    <div className="form-control">
-      <label className="label cursor-pointer flex gap-2">
-        <span className="label-text">°C</span>
-        <input 
-          type="checkbox" 
-          className="toggle toggle-primary" 
-          checked={unit === 'fahrenheit'}
-          onChange={() => onToggle(unit === 'celsius' ? 'fahrenheit' : 'celsius')}
-        />
-        <span className="label-text">°F</span>
-      </label>
+    <div className="flex items-center space-x-2">
+      <button
+        onClick={() => onToggle('celsius')}
+        className={`btn ${unit === 'celsius' ? 'btn-primary' : 'btn-outline'}`}
+        aria-pressed={unit === 'celsius'}
+      >
+        °C
+      </button>
+      <button
+        onClick={() => onToggle('fahrenheit')}
+        className={`btn ${unit === 'fahrenheit' ? 'btn-primary' : 'btn-outline'}`}
+        aria-pressed={unit === 'fahrenheit'}
+      >
+        °F
+      </button>
     </div>
   );
-};
-
-export default TemperatureToggle;
+}

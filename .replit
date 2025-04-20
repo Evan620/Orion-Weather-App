@@ -15,10 +15,6 @@ author = "agent"
 task = "workflow.run"
 args = "Frontend"
 
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Frontend Debug"
-
 [[workflows.workflow]]
 name = "Frontend"
 author = "agent"
@@ -34,24 +30,13 @@ task = "shell.exec"
 args = "cd frontend && npm install && npm run dev"
 waitForPort = 5000
 
-[[workflows.workflow]]
-name = "Frontend Debug"
-author = "agent"
-
-[workflows.workflow.metadata]
-agentRequireRestartOnSave = false
-
-[[workflows.workflow.tasks]]
-task = "packager.installForAll"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd frontend && NODE_OPTIONS='--inspect' next dev -p 5000"
-waitForPort = 5000
-
 [deployment]
 run = ["sh", "-c", "cd frontend && npm install && npm run dev"]
 
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[[ports]]
+localPort = 42879
+externalPort = 3000
