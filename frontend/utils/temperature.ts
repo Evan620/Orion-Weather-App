@@ -21,6 +21,6 @@ export const convertFromKelvin = (kelvin: number, unit: TemperatureUnit): number
  * @returns Formatted temperature string with unit symbol
  */
 export const formatTemperature = (temp: number, unit: TemperatureUnit): string => {
-  const symbol = unit === 'celsius' ? '°C' : '°F';
-  return `${Math.round(temp)}${symbol}`;
+  const roundedTemp = Math.round(temp);
+  return `${roundedTemp}°${unit === 'celsius' ? 'C' : 'F'}`;
 };

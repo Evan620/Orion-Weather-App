@@ -1,5 +1,5 @@
-import React from 'react';
 import { CurrentWeather, TemperatureUnit } from '../types/weather';
+import { formatTemperature } from '../utils/temperature';
 import { formatDate } from '../utils/dateFormat';
 
 interface WeatherCardProps {
@@ -7,68 +7,44 @@ interface WeatherCardProps {
   unit: TemperatureUnit;
 }
 
-const WeatherCard: React.FC<WeatherCardProps> = ({ weather, unit }) => {
-  const temperatureSymbol = unit === 'celsius' ? '°C' : '°F';
+export default function WeatherCard({ weather, unit }: WeatherCardProps) {
+  // Safety check for weather data
+  if (!weather || !weather.weather || weather.weather.length === 0) {
+    return <div>Weather data unavailable</div>;
+  }
 
-  // Get weather icon URL
-  const iconUrl = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`;
-
+  const mainWeather = weather.weather[0];
+  const iconUrl = `https://openweathermap.org/img/wn/${mainWeather.icon}@2x.png`;
+  
   return (
-    <div className="card bg-base-200 shadow-lg overflow-hidden h-full">
-      <div className="card-body p-6">
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="flex-1">
-            <h2 className="card-title text-3xl mb-1">{weather.name}, {weather.sys.country}</h2>
-            <p className="text-lg opacity-70">{formatDate(weather.dt)}</p>
-            <div className="flex items-center mt-4">
+    <div className="card bg-base-100 shadow-lg overflow-hidden">
+      <div className="p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Left side - Weather icon and temperature (D, E) */}
+          <div className="flex flex-col items-center justify-center">
+            <div className="flex justify-center mb-2">
               <img 
                 src={iconUrl} 
-                alt={weather.weather[0].description} 
-                className="w-24 h-24 mr-2"
+                alt={mainWeather.description} 
+                className="w-24 h-24"
               />
-              <div>
-                <div className="text-5xl font-bold">
-                  {Math.round(weather.main.temp)}{temperatureSymbol}
-                </div>
-                <div className="text-xl capitalize">
-                  {weather.weather[0].description}
-                </div>
-              </div>
             </div>
+            <h2 className="text-4xl font-bold text-center mb-1">
+              {formatTemperature(weather.main.temp, unit)}
+            </h2>
+            {/* Weather description (F) */}
+            <p className="text-xl text-center capitalize">{mainWeather.main}</p>
           </div>
           
-          <div className="divider md:divider-horizontal"></div>
-          
-          <div className="grid grid-cols-2 gap-4 text-center">
-            <div className="stat-value">
-              <div className="stat-title">Min</div>
-              <div className="text-2xl">
-                {Math.round(weather.main.temp_min)}{temperatureSymbol}
-              </div>
-            </div>
-            <div>
-              <div className="stat-title">Max</div>
-              <div className="text-2xl">
-                {Math.round(weather.main.temp_max)}{temperatureSymbol}
-              </div>
-            </div>
-            <div>
-              <div className="stat-title">Feels like</div>
-              <div className="text-2xl">
-                {Math.round(weather.main.feels_like)}{temperatureSymbol}
-              </div>
-            </div>
-            <div>
-              <div className="stat-title">Pressure</div>
-              <div className="text-2xl">
-                {weather.main.pressure} hPa
-              </div>
-            </div>
+          {/* Right side - Location and date (G) */}
+          <div className="flex flex-col justify-end items-center md:items-end">
+            <h3 className="text-2xl font-medium">
+              {weather.name}, {weather.sys.country}
+            </h3>
+            <p className="text-base">{formatDate(weather.dt)}</p>
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default WeatherCard;
+}

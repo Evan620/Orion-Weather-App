@@ -5,12 +5,11 @@
  */
 export const formatDate = (timestamp: number): string => {
   const date = new Date(timestamp * 1000);
-  
-  return new Intl.DateTimeFormat('en-US', {
+  return date.toLocaleDateString('en-US', {
     weekday: 'long',
     day: 'numeric',
-    month: 'short',
-  }).format(date);
+    month: 'short'
+  });
 };
 
 /**
@@ -20,10 +19,9 @@ export const formatDate = (timestamp: number): string => {
  */
 export const formatTime = (timestamp: number): string => {
   const date = new Date(timestamp * 1000);
-  
-  return new Intl.DateTimeFormat('en-US', {
+  return date.toLocaleTimeString('en-US', {
     hour: '2-digit',
     minute: '2-digit',
     hour12: false
-  }).format(date);
+  });
 };
