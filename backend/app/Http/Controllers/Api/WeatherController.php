@@ -3,77 +3,43 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Services\WeatherService;
+use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+
 
 class WeatherController extends Controller
 {
-    protected $weatherService;
+    private $weatherService;
 
-    /**
-     * WeatherController constructor.
-     * 
-     * @param WeatherService $weatherService
-     */
     public function __construct(WeatherService $weatherService)
     {
         $this->weatherService = $weatherService;
     }
 
-    /**
-     * Get current weather for a city
-     * 
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function getCurrentWeather(Request $request): JsonResponse
+    public function getCurrentWeather(Request $request)
     {
-        $request->validate([
-            'city' => 'required|string|max:100',
-            'units' => 'sometimes|string|in:celsius,fahrenheit'
-        ]);
+        $city = $request->query('city');
+        $units = $request->query('units', 'metric');
 
         try {
-            $units = $request->input('units', 'celsius');
-            $city = $request->input('city');
-            
-            $weatherData = $this->weatherService->getCurrentWeatherByCity($city, $units);
-            
+            $weatherData = $this->weatherService->getCurrentWeather($city, $units);
             return response()->json($weatherData);
         } catch (\Exception $e) {
-            return response()->json([
-                'message' => $e->getMessage()
-            ], 404);
+            return response()->json(['message' => $e->getMessage()], 404);
         }
     }
 
-    /**
-     * Get weather forecast for a city
-     * 
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function getForecast(Request $request): JsonResponse
+    public function getForecast(Request $request)
     {
-        $request->validate([
-            'city' => 'required|string|max:100',
-            'units' => 'sometimes|string|in:celsius,fahrenheit',
-            'days' => 'sometimes|integer|min:1|max:5'
-        ]);
+        $city = $request->query('city');
+        $units = $request->query('units', 'metric');
 
         try {
-            $city = $request->input('city');
-            $units = $request->input('units', 'celsius');
-            $days = $request->input('days', 3);
-            
-            $forecastData = $this->weatherService->getForecastByCity($city, $units, $days);
-            
+            $forecastData = $this->weatherService->getForecast($city, $units);
             return response()->json($forecastData);
         } catch (\Exception $e) {
-            return response()->json([
-                'message' => $e->getMessage()
-            ], 404);
+            return response()->json(['message' => $e->getMessage()], 404);
         }
     }
 
