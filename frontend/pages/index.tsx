@@ -56,6 +56,12 @@ export default function Home() {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto p-4">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold mb-2">Orion Weather App</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300">
+            Because even the clouds need someone to look up to! ☁️
+          </p>
+        </div>
         <div className="flex items-center gap-2 mb-6">
           <div className="flex-1">
             <SearchBar onSearch={handleSearch} />

@@ -16,15 +16,15 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="join">
+      <div className="flex gap-2">
         <input
           type="text"
           placeholder="Search for a city..."
-          className="input input-bordered join-item"
+          className="input input-bordered flex-1"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button type="submit" className="btn join-item">
+        <button type="submit" className="btn btn-primary hover:btn-secondary transition-colors">
           Go
         </button>
       </div>
