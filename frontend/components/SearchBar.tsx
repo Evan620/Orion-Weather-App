@@ -5,31 +5,29 @@ interface SearchBarProps {
 }
 
 export default function SearchBar({ onSearch }: SearchBarProps) {
-  const [query, setQuery] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (query.trim()) {
-      onSearch(query.trim());
+    if (searchTerm.trim()) {
+      onSearch(searchTerm.trim());
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full max-w-md">
-      <input
-        type="text"
-        placeholder="Search city..."
-        className="input input-bordered w-full"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <button 
-        type="submit" 
-        className="btn btn-primary ml-2"
-        aria-label="Search"
-      >
-        Go
-      </button>
+    <form onSubmit={handleSubmit} className="form-control">
+      <div className="input-group">
+        <input
+          type="text"
+          placeholder="Search for a city..."
+          className="input input-bordered"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button type="submit" className="btn btn-square">
+          Go
+        </button>
+      </div>
     </form>
   );
 }

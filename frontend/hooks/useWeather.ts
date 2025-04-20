@@ -18,16 +18,24 @@ export const useWeather = (defaultUnit: TemperatureUnit) => {
       const weatherResponse = await fetch(`${API_BASE_URL}/weather?city=${encodeURIComponent(city)}&units=${tempUnit}`);
       const forecastResponse = await fetch(`${API_BASE_URL}/forecast?city=${encodeURIComponent(city)}&units=${tempUnit}`);
 
-      if (!weatherResponse.ok || !forecastResponse.ok) {
-        throw new Error('Failed to fetch weather data');
-      }
-
       const weatherData = await weatherResponse.json();
       const forecastData = await forecastResponse.json();
 
-      setCurrentWeather(weatherData.data);
-      setForecast(forecastData.data);
+      if (!weatherResponse.ok) {
+        throw new Error(weatherData.message || 'Failed to fetch weather data');
+      }
+
+      if (!forecastResponse.ok) {
+        throw new Error(forecastData.message || 'Failed to fetch forecast data');
+      }
+
+      setCurrentWeather(weatherData);
+      setForecast(forecastData);
+      
+      console.log('Weather Data:', weatherData);
+      console.log('Forecast Data:', forecastData);
     } catch (err) {
+      console.error('API Error:', err);
       setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
       setLoading(false);
